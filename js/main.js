@@ -1,11 +1,11 @@
 /* ============================================
-   Display Pallets — main.js
+   Display Pallets - main.js
    Premium B2B interactions
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ----- 1. Navigation — scroll shadow + glassmorphism ----- */
+  /* ----- 1. Navigation - scroll shadow + glassmorphism ----- */
   (() => {
     const nav = document.querySelector('.nav');
     if (!nav) return;
