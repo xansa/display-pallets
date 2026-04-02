@@ -129,44 +129,96 @@
         <div class="hero__visual">
           <!-- Isometric displaypallet SVG -->
           <svg viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Base platform - isometric view -->
-            <g opacity="0.95">
-              <!-- Shadow -->
-              <ellipse cx="200" cy="310" rx="140" ry="25" fill="#0A0F1C" opacity="0.15"/>
-              <!-- Pallet top surface -->
-              <path d="M200 100 L340 170 L200 240 L60 170Z" fill="#3B82F6" opacity="0.2"/>
-              <path d="M200 100 L340 170 L200 240 L60 170Z" stroke="#60A5FA" stroke-width="1.5" fill="none"/>
-              <!-- Pallet front face -->
-              <path d="M60 170 L200 240 L200 270 L60 200Z" fill="#1E40AF" opacity="0.3"/>
-              <path d="M200 240 L340 170 L340 200 L200 270Z" fill="#1D4ED8" opacity="0.25"/>
-              <!-- Pallet deck boards - top -->
-              <line x1="88" y1="156" x2="228" y2="226" stroke="#60A5FA" stroke-width="0.8" opacity="0.4"/>
-              <line x1="116" y1="142" x2="256" y2="212" stroke="#60A5FA" stroke-width="0.8" opacity="0.4"/>
-              <line x1="144" y1="128" x2="284" y2="198" stroke="#60A5FA" stroke-width="0.8" opacity="0.4"/>
-              <line x1="172" y1="114" x2="312" y2="184" stroke="#60A5FA" stroke-width="0.8" opacity="0.4"/>
-              <!-- Cross boards -->
-              <line x1="104" y1="186" x2="296" y2="186" stroke="#60A5FA" stroke-width="0.8" opacity="0.3" transform="rotate(-15 200 186)"/>
-              <line x1="104" y1="160" x2="296" y2="160" stroke="#60A5FA" stroke-width="0.8" opacity="0.3" transform="rotate(-15 200 160)"/>
-              <!-- Pallet blocks -->
-              <rect x="90" y="175" width="20" height="25" rx="2" fill="#2563EB" opacity="0.35" transform="skewX(-20)"/>
-              <rect x="180" y="195" width="20" height="25" rx="2" fill="#2563EB" opacity="0.35" transform="skewX(-20)"/>
-              <rect x="270" y="175" width="20" height="25" rx="2" fill="#2563EB" opacity="0.3" transform="skewX(-20)"/>
-              <!-- Stacked boxes on pallet -->
-              <g opacity="0.85">
-                <!-- Box 1 -->
-                <path d="M130 70 L230 115 L230 165 L130 120Z" fill="#93C5FD" opacity="0.25" stroke="#60A5FA" stroke-width="1"/>
-                <path d="M230 115 L290 85 L290 135 L230 165Z" fill="#60A5FA" opacity="0.2" stroke="#60A5FA" stroke-width="1"/>
-                <path d="M130 70 L230 115 L290 85 L190 40Z" fill="#BFDBFE" opacity="0.3" stroke="#60A5FA" stroke-width="1"/>
-                <!-- Box 2 (offset) -->
-                <path d="M150 40 L240 80 L240 120 L150 80Z" fill="#93C5FD" opacity="0.2" stroke="#60A5FA" stroke-width="0.8"/>
-                <path d="M240 80 L295 55 L295 95 L240 120Z" fill="#60A5FA" opacity="0.15" stroke="#60A5FA" stroke-width="0.8"/>
-                <path d="M150 40 L240 80 L295 55 L205 15Z" fill="#BFDBFE" opacity="0.25" stroke="#60A5FA" stroke-width="0.8"/>
-              </g>
-              <!-- Dimension label -->
-              <g opacity="0.6">
-                <text x="200" y="290" text-anchor="middle" fill="#94A3B8" font-family="Inter, sans-serif" font-size="14" font-weight="600" letter-spacing="0.1em">60 x 80 CM</text>
-              </g>
-            </g>
+            <!-- Shadow -->
+            <ellipse cx="200" cy="310" rx="150" ry="22" fill="#0A1628" opacity="0.12"/>
+
+            <!-- === BOTTOM BOARDS (3 runners, lengthwise) === -->
+            <!-- Runner left -->
+            <path d="M82 248 L192 303 L192 293 L82 238Z" fill="#0F3A5E" opacity="0.5"/>
+            <path d="M192 303 L298 248 L298 238 L192 293Z" fill="#12486F" opacity="0.4"/>
+            <!-- Runner center -->
+            <path d="M130 224 L240 279 L240 269 L130 214Z" fill="#0F3A5E" opacity="0.5"/>
+            <path d="M240 279 L346 224 L346 214 L240 269Z" fill="#12486F" opacity="0.4"/>
+            <!-- Runner right -->
+            <path d="M178 200 L288 255 L288 245 L178 190Z" fill="#0F3A5E" opacity="0.5"/>
+            <path d="M288 255 L394 200 L394 190 L288 245Z" fill="#12486F" opacity="0.4"/>
+
+            <!-- === BLOCKS (9 blocks: 3 rows x 3) visible from front/side === -->
+            <!-- Front row blocks (left side face) -->
+            <path d="M88 228 L88 238 L108 248 L108 238Z" fill="#0E3655" opacity="0.65"/>
+            <path d="M108 248 L128 238 L128 228 L108 238Z" fill="#154E78" opacity="0.55"/>
+            <path d="M136 204 L136 214 L156 224 L156 214Z" fill="#0E3655" opacity="0.65"/>
+            <path d="M156 224 L176 214 L176 204 L156 214Z" fill="#154E78" opacity="0.55"/>
+            <path d="M184 180 L184 190 L204 200 L204 190Z" fill="#0E3655" opacity="0.65"/>
+            <path d="M204 200 L224 190 L224 180 L204 190Z" fill="#154E78" opacity="0.55"/>
+            <!-- Middle row blocks -->
+            <path d="M148 258 L148 268 L168 278 L168 268Z" fill="#0E3655" opacity="0.6"/>
+            <path d="M168 278 L188 268 L188 258 L168 268Z" fill="#154E78" opacity="0.5"/>
+            <path d="M196 234 L196 244 L216 254 L216 244Z" fill="#0E3655" opacity="0.6"/>
+            <path d="M216 254 L236 244 L236 234 L216 244Z" fill="#154E78" opacity="0.5"/>
+            <path d="M244 210 L244 220 L264 230 L264 220Z" fill="#0E3655" opacity="0.6"/>
+            <path d="M264 230 L284 220 L284 210 L264 220Z" fill="#154E78" opacity="0.5"/>
+            <!-- Back row blocks -->
+            <path d="M208 288 L208 298 L228 308 L228 298Z" fill="#0E3655" opacity="0.55"/>
+            <path d="M228 308 L248 298 L248 288 L228 298Z" fill="#154E78" opacity="0.45"/>
+            <path d="M256 264 L256 274 L276 284 L276 274Z" fill="#0E3655" opacity="0.55"/>
+            <path d="M276 284 L296 274 L296 264 L276 274Z" fill="#154E78" opacity="0.45"/>
+            <path d="M304 240 L304 250 L324 260 L324 250Z" fill="#0E3655" opacity="0.55"/>
+            <path d="M324 260 L344 250 L344 240 L324 250Z" fill="#154E78" opacity="0.45"/>
+
+            <!-- === MIDDLE CROSS BOARDS (3 stringers going width-wise) === -->
+            <!-- Front stringer -->
+            <path d="M68 218 L188 273 L188 268 L68 213Z" fill="#133F5E" opacity="0.45"/>
+            <path d="M188 273 L308 218 L308 213 L188 268Z" fill="#185A82" opacity="0.35"/>
+            <!-- Center stringer -->
+            <path d="M116 194 L236 249 L236 244 L116 189Z" fill="#133F5E" opacity="0.45"/>
+            <path d="M236 249 L356 194 L356 189 L236 244Z" fill="#185A82" opacity="0.35"/>
+            <!-- Back stringer -->
+            <path d="M164 170 L284 225 L284 220 L164 165Z" fill="#133F5E" opacity="0.45"/>
+            <path d="M284 225 L404 170 L404 165 L284 220Z" fill="#185A82" opacity="0.35"/>
+
+            <!-- === TOP DECK BOARDS (7 planks with gaps) === -->
+            <!-- Board 1 (front-most) -->
+            <path d="M56 200 L166 255 L186 245 L76 190Z" fill="#1B4D7A" opacity="0.3"/>
+            <path d="M56 200 L76 190 L186 245 L166 255Z" stroke="#2A6A9E" stroke-width="0.8" fill="none" opacity="0.5"/>
+            <!-- Board 2 -->
+            <path d="M72 192 L182 247 L202 237 L92 182Z" fill="#1B4D7A" opacity="0.32"/>
+            <path d="M72 192 L92 182 L202 237 L182 247Z" stroke="#2A6A9E" stroke-width="0.8" fill="none" opacity="0.5"/>
+            <!-- Board 3 -->
+            <path d="M88 184 L198 239 L218 229 L108 174Z" fill="#1B4D7A" opacity="0.28"/>
+            <path d="M88 184 L108 174 L218 229 L198 239Z" stroke="#2A6A9E" stroke-width="0.8" fill="none" opacity="0.5"/>
+            <!-- Board 4 (center) -->
+            <path d="M104 176 L214 231 L234 221 L124 166Z" fill="#1B4D7A" opacity="0.3"/>
+            <path d="M104 176 L124 166 L234 221 L214 231Z" stroke="#2A6A9E" stroke-width="0.8" fill="none" opacity="0.5"/>
+            <!-- Board 5 -->
+            <path d="M120 168 L230 223 L250 213 L140 158Z" fill="#1B4D7A" opacity="0.26"/>
+            <path d="M120 168 L140 158 L250 213 L230 223Z" stroke="#2A6A9E" stroke-width="0.8" fill="none" opacity="0.5"/>
+            <!-- Board 6 -->
+            <path d="M136 160 L246 215 L266 205 L156 150Z" fill="#1B4D7A" opacity="0.28"/>
+            <path d="M136 160 L156 150 L266 205 L246 215Z" stroke="#2A6A9E" stroke-width="0.8" fill="none" opacity="0.5"/>
+            <!-- Board 7 (back-most) -->
+            <path d="M152 152 L262 207 L282 197 L172 142Z" fill="#1B4D7A" opacity="0.3"/>
+            <path d="M152 152 L172 142 L282 197 L262 207Z" stroke="#2A6A9E" stroke-width="0.8" fill="none" opacity="0.5"/>
+
+            <!-- === TOP SURFACE OUTLINE (full deck) === -->
+            <path d="M56 200 L166 255 L282 197 L172 142Z" stroke="#3D8EBF" stroke-width="1.5" fill="#1B4D7A" fill-opacity="0.08" opacity="0.7"/>
+
+            <!-- === FRONT FACE (left side visible) === -->
+            <path d="M56 200 L166 255 L166 270 L56 215Z" fill="#0F3A5E" opacity="0.45"/>
+            <path d="M56 200 L166 255 L166 270 L56 215Z" stroke="#2A6A9E" stroke-width="0.8" fill="none" opacity="0.4"/>
+
+            <!-- === RIGHT FACE === -->
+            <path d="M166 255 L282 197 L282 212 L166 270Z" fill="#154E78" opacity="0.35"/>
+            <path d="M166 255 L282 197 L282 212 L166 270Z" stroke="#2A6A9E" stroke-width="0.8" fill="none" opacity="0.35"/>
+
+            <!-- === WOOD GRAIN DETAILS on top === -->
+            <line x1="80" y1="193" x2="170" y2="238" stroke="#3D8EBF" stroke-width="0.3" opacity="0.3"/>
+            <line x1="110" y1="178" x2="200" y2="223" stroke="#3D8EBF" stroke-width="0.3" opacity="0.25"/>
+            <line x1="145" y1="160" x2="235" y2="205" stroke="#3D8EBF" stroke-width="0.3" opacity="0.25"/>
+            <line x1="165" y1="153" x2="255" y2="198" stroke="#3D8EBF" stroke-width="0.3" opacity="0.2"/>
+
+            <!-- === DIMENSION LABEL === -->
+            <text x="200" y="305" text-anchor="middle" fill="#94A3B8" font-family="Inter, sans-serif" font-size="14" font-weight="600" letter-spacing="0.1em" opacity="0.7">60 x 80 CM</text>
           </svg>
         </div>
       </div>
