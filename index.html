@@ -116,13 +116,82 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <div class="hero__content">
-        <span class="hero__badge">Specialist in 60x80 pallets</span>
-        <h1>De displaypallet expert van Nederland</h1>
-        <p>Displaypallets, Düsseldorf pallets en halve europallets — altijd op voorraad, scherp geprijsd en snel geleverd door heel Nederland.</p>
-        <div class="hero__actions">
-          <a href="contact.html" class="btn btn--white btn--lg">Offerte aanvragen</a>
-          <a href="aanbod.html" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff;">Bekijk aanbod</a>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <span class="hero__badge"><span class="hero__badge-dot"></span> Specialist in 60x80 pallets</span>
+          <h1>De displaypallet expert van Nederland</h1>
+          <p>Displaypallets, Düsseldorf pallets en halve europallets — altijd op voorraad, scherp geprijsd en snel geleverd door heel Nederland.</p>
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--white btn--lg">Offerte aanvragen</a>
+            <a href="aanbod.html" class="btn btn--outline-white btn--lg">Bekijk aanbod</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <!-- Isometric displaypallet SVG -->
+          <svg viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Base platform - isometric view -->
+            <g opacity="0.95">
+              <!-- Shadow -->
+              <ellipse cx="200" cy="310" rx="140" ry="25" fill="#0A0F1C" opacity="0.15"/>
+              <!-- Pallet top surface -->
+              <path d="M200 100 L340 170 L200 240 L60 170Z" fill="#3B82F6" opacity="0.2"/>
+              <path d="M200 100 L340 170 L200 240 L60 170Z" stroke="#60A5FA" stroke-width="1.5" fill="none"/>
+              <!-- Pallet front face -->
+              <path d="M60 170 L200 240 L200 270 L60 200Z" fill="#1E40AF" opacity="0.3"/>
+              <path d="M200 240 L340 170 L340 200 L200 270Z" fill="#1D4ED8" opacity="0.25"/>
+              <!-- Pallet deck boards - top -->
+              <line x1="88" y1="156" x2="228" y2="226" stroke="#60A5FA" stroke-width="0.8" opacity="0.4"/>
+              <line x1="116" y1="142" x2="256" y2="212" stroke="#60A5FA" stroke-width="0.8" opacity="0.4"/>
+              <line x1="144" y1="128" x2="284" y2="198" stroke="#60A5FA" stroke-width="0.8" opacity="0.4"/>
+              <line x1="172" y1="114" x2="312" y2="184" stroke="#60A5FA" stroke-width="0.8" opacity="0.4"/>
+              <!-- Cross boards -->
+              <line x1="104" y1="186" x2="296" y2="186" stroke="#60A5FA" stroke-width="0.8" opacity="0.3" transform="rotate(-15 200 186)"/>
+              <line x1="104" y1="160" x2="296" y2="160" stroke="#60A5FA" stroke-width="0.8" opacity="0.3" transform="rotate(-15 200 160)"/>
+              <!-- Pallet blocks -->
+              <rect x="90" y="175" width="20" height="25" rx="2" fill="#2563EB" opacity="0.35" transform="skewX(-20)"/>
+              <rect x="180" y="195" width="20" height="25" rx="2" fill="#2563EB" opacity="0.35" transform="skewX(-20)"/>
+              <rect x="270" y="175" width="20" height="25" rx="2" fill="#2563EB" opacity="0.3" transform="skewX(-20)"/>
+              <!-- Stacked boxes on pallet -->
+              <g opacity="0.85">
+                <!-- Box 1 -->
+                <path d="M130 70 L230 115 L230 165 L130 120Z" fill="#93C5FD" opacity="0.25" stroke="#60A5FA" stroke-width="1"/>
+                <path d="M230 115 L290 85 L290 135 L230 165Z" fill="#60A5FA" opacity="0.2" stroke="#60A5FA" stroke-width="1"/>
+                <path d="M130 70 L230 115 L290 85 L190 40Z" fill="#BFDBFE" opacity="0.3" stroke="#60A5FA" stroke-width="1"/>
+                <!-- Box 2 (offset) -->
+                <path d="M150 40 L240 80 L240 120 L150 80Z" fill="#93C5FD" opacity="0.2" stroke="#60A5FA" stroke-width="0.8"/>
+                <path d="M240 80 L295 55 L295 95 L240 120Z" fill="#60A5FA" opacity="0.15" stroke="#60A5FA" stroke-width="0.8"/>
+                <path d="M150 40 L240 80 L295 55 L205 15Z" fill="#BFDBFE" opacity="0.25" stroke="#60A5FA" stroke-width="0.8"/>
+              </g>
+              <!-- Dimension label -->
+              <g opacity="0.6">
+                <text x="200" y="290" text-anchor="middle" fill="#94A3B8" font-family="Inter, sans-serif" font-size="14" font-weight="600" letter-spacing="0.1em">60 x 80 CM</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-up">
+          <div class="stat-item__value">500+</div>
+          <div class="stat-item__label">Tevreden klanten</div>
+        </div>
+        <div class="stat-item fade-up delay-1">
+          <div class="stat-item__value">NL</div>
+          <div class="stat-item__label">Heel Nederland</div>
+        </div>
+        <div class="stat-item fade-up delay-2">
+          <div class="stat-item__value">24u</div>
+          <div class="stat-item__label">Offerte reactietijd</div>
+        </div>
+        <div class="stat-item fade-up delay-3">
+          <div class="stat-item__value">60x80</div>
+          <div class="stat-item__label">Onze specialisatie</div>
         </div>
       </div>
     </div>
@@ -131,26 +200,47 @@
   <!-- USP's -->
   <section class="section">
     <div class="container">
+      <div class="section-intro fade-up">
+        <span class="label-text">Waarom Display Pallets</span>
+        <h2>Uw specialist in het 60x80 segment</h2>
+        <p>Wij combineren specialisatie, snelheid en scherpe prijzen voor het beste resultaat.</p>
+      </div>
       <div class="usp-grid">
         <div class="usp-card fade-up">
-          <div class="usp-card__icon">&#9889;</div>
-          <h3>Snelle levering</h3>
-          <p>Vanuit Moerdijk leveren wij binnen enkele werkdagen door heel Nederland.</p>
+          <div class="usp-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="usp-card__text">
+            <h3>Snelle levering</h3>
+            <p>Vanuit Moerdijk leveren wij binnen enkele werkdagen door heel Nederland.</p>
+          </div>
         </div>
-        <div class="usp-card fade-up">
-          <div class="usp-card__icon">&#128176;</div>
-          <h3>Scherpe prijzen</h3>
-          <p>Vanaf €4,95 per stuk bij volle vracht. Vraag een offerte aan voor uw situatie.</p>
+        <div class="usp-card fade-up delay-1">
+          <div class="usp-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="usp-card__text">
+            <h3>Scherpe prijzen</h3>
+            <p>Vanaf €4,95 per stuk bij volle vracht. Vraag een offerte aan voor uw situatie.</p>
+          </div>
         </div>
-        <div class="usp-card fade-up">
-          <div class="usp-card__icon">&#127758;</div>
-          <h3>Heel Nederland</h3>
-          <p>Wij leveren aan bedrijven in alle provincies, van Groningen tot Zeeland.</p>
+        <div class="usp-card fade-up delay-2">
+          <div class="usp-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="usp-card__text">
+            <h3>Heel Nederland</h3>
+            <p>Wij leveren aan bedrijven in alle provincies, van Groningen tot Zeeland.</p>
+          </div>
         </div>
-        <div class="usp-card fade-up">
-          <div class="usp-card__icon">&#128230;</div>
-          <h3>Grote voorraad</h3>
-          <p>Altijd displaypallets op voorraad. Ook grote partijen leveren we snel.</p>
+        <div class="usp-card fade-up delay-3">
+          <div class="usp-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <div class="usp-card__text">
+            <h3>Grote voorraad</h3>
+            <p>Altijd displaypallets op voorraad. Ook grote partijen leveren we snel.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -160,14 +250,25 @@
   <section class="section section--alt">
     <div class="container">
       <div class="section-intro fade-up">
-        <h2>Ons aanbod</h2>
+        <span class="label-text">Ons aanbod</span>
+        <h2>Drie varianten, één formaat</h2>
         <p>Wij bieden verschillende varianten van de 60x80 pallet aan, geschikt voor diverse toepassingen in retail en logistiek.</p>
       </div>
       <div class="product-grid">
         <div class="product-card fade-up">
           <div class="product-card__visual">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="45" width="90" height="10" rx="2" fill="#1B4D7A" opacity="0.15"/>
+              <rect x="15" y="58" width="90" height="5" rx="1" fill="#1B4D7A" opacity="0.1"/>
+              <rect x="20" y="66" width="12" height="18" rx="2" fill="#2563EB" opacity="0.2"/>
+              <rect x="54" y="66" width="12" height="18" rx="2" fill="#2563EB" opacity="0.2"/>
+              <rect x="88" y="66" width="12" height="18" rx="2" fill="#2563EB" opacity="0.2"/>
+              <rect x="15" y="87" width="90" height="5" rx="1" fill="#1B4D7A" opacity="0.1"/>
+              <rect x="15" y="95" width="90" height="10" rx="2" fill="#1B4D7A" opacity="0.15"/>
+              <text x="60" y="35" text-anchor="middle" fill="#1B4D7A" opacity="0.3" font-family="Inter" font-size="12" font-weight="700">DISPLAY</text>
+            </svg>
             <span class="product-card__dims">60x80</span>
-            <span class="product-card__label">Populair</span>
+            <span class="product-card__label product-card__label--popular">Populair</span>
           </div>
           <div class="product-card__body">
             <h3>Displaypallet</h3>
@@ -177,11 +278,22 @@
               <span class="spec-tag">Lichtgewicht</span>
               <span class="spec-tag">Retail</span>
             </div>
-            <a href="aanbod.html" class="btn btn--outline" style="width:100%">Meer info</a>
+            <a href="aanbod.html" class="btn btn--secondary btn--full">Meer info</a>
           </div>
         </div>
-        <div class="product-card fade-up">
+        <div class="product-card fade-up delay-1">
           <div class="product-card__visual">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="45" width="90" height="10" rx="2" fill="#1B4D7A" opacity="0.15"/>
+              <rect x="15" y="58" width="90" height="5" rx="1" fill="#1B4D7A" opacity="0.12"/>
+              <rect x="18" y="66" width="15" height="18" rx="2" fill="#2563EB" opacity="0.2"/>
+              <rect x="38" y="66" width="15" height="18" rx="2" fill="#2563EB" opacity="0.2"/>
+              <rect x="67" y="66" width="15" height="18" rx="2" fill="#2563EB" opacity="0.2"/>
+              <rect x="87" y="66" width="15" height="18" rx="2" fill="#2563EB" opacity="0.2"/>
+              <rect x="15" y="87" width="90" height="5" rx="1" fill="#1B4D7A" opacity="0.12"/>
+              <rect x="15" y="95" width="90" height="10" rx="2" fill="#1B4D7A" opacity="0.15"/>
+              <text x="60" y="35" text-anchor="middle" fill="#1B4D7A" opacity="0.3" font-family="Inter" font-size="10" font-weight="700">DUSSELDORF</text>
+            </svg>
             <span class="product-card__dims">60x80</span>
             <span class="product-card__label">Retail</span>
           </div>
@@ -193,11 +305,22 @@
               <span class="spec-tag">4-weg toegang</span>
               <span class="spec-tag">Supermarkt</span>
             </div>
-            <a href="aanbod.html" class="btn btn--outline" style="width:100%">Meer info</a>
+            <a href="aanbod.html" class="btn btn--secondary btn--full">Meer info</a>
           </div>
         </div>
-        <div class="product-card fade-up">
+        <div class="product-card fade-up delay-2">
           <div class="product-card__visual">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="42" width="90" height="12" rx="2" fill="#1B4D7A" opacity="0.18"/>
+              <rect x="15" y="57" width="90" height="6" rx="1" fill="#1B4D7A" opacity="0.12"/>
+              <rect x="18" y="66" width="16" height="20" rx="2" fill="#2563EB" opacity="0.25"/>
+              <rect x="38" y="66" width="16" height="20" rx="2" fill="#2563EB" opacity="0.25"/>
+              <rect x="66" y="66" width="16" height="20" rx="2" fill="#2563EB" opacity="0.25"/>
+              <rect x="86" y="66" width="16" height="20" rx="2" fill="#2563EB" opacity="0.25"/>
+              <rect x="15" y="89" width="90" height="6" rx="1" fill="#1B4D7A" opacity="0.12"/>
+              <rect x="15" y="98" width="90" height="12" rx="2" fill="#1B4D7A" opacity="0.18"/>
+              <text x="60" y="33" text-anchor="middle" fill="#1B4D7A" opacity="0.3" font-family="Inter" font-size="10" font-weight="700">EUROPALLET</text>
+            </svg>
             <span class="product-card__dims">60x80</span>
             <span class="product-card__label">Logistiek</span>
           </div>
@@ -209,9 +332,19 @@
               <span class="spec-tag">Stevig</span>
               <span class="spec-tag">Logistiek</span>
             </div>
-            <a href="aanbod.html" class="btn btn--outline" style="width:100%">Meer info</a>
+            <a href="aanbod.html" class="btn btn--secondary btn--full">Meer info</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-card fade-up">
+        <p class="quote-card__text">Betrouwbare leverancier met korte levertijden en eerlijke prijzen. De focus op displaypallets maakt het verschil.</p>
+        <p class="quote-card__author">Logistiek manager — Retailsector</p>
       </div>
     </div>
   </section>
@@ -226,9 +359,10 @@
   </section>
 
   <!-- FAQ -->
-  <section class="section">
+  <section class="section section--alt">
     <div class="container">
       <div class="section-intro fade-up">
+        <span class="label-text">Veelgesteld</span>
         <h2>Veelgestelde vragen</h2>
         <p>Antwoorden op de meest gestelde vragen over displaypallets.</p>
       </div>
@@ -297,7 +431,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <span class="footer__logo">Display Pallets</span>
+          <span class="footer__logo"><span class="nav__logo-accent"></span> Display Pallets</span>
           <p>Specialist in displaypallets, Düsseldorf pallets en halve europallets. Levering door heel Nederland vanuit Moerdijk.</p>
         </div>
         <div>
@@ -333,6 +467,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Terug naar boven">&#8593;</button>
 
   <script src="js/main.js" defer></script>
 </body>

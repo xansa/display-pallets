@@ -66,7 +66,14 @@
       <div class="blog-grid">
         <article class="blog-card fade-up">
           <div class="blog-card__visual">
-            <span class="blog-card__visual-text">vs</span>
+            <!-- Comparison SVG -->
+            <svg viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="25" width="35" height="30" rx="3" stroke="#1B4D7A" stroke-width="1.5" opacity="0.25" stroke-dasharray="4 2"/>
+              <rect x="77" y="15" width="35" height="50" rx="3" stroke="#2563EB" stroke-width="1.5" opacity="0.25" stroke-dasharray="4 2"/>
+              <text x="25" y="44" text-anchor="middle" fill="#1B4D7A" opacity="0.3" font-family="Inter" font-size="8" font-weight="700">60x80</text>
+              <text x="95" y="44" text-anchor="middle" fill="#2563EB" opacity="0.3" font-family="Inter" font-size="8" font-weight="700">80x120</text>
+              <text x="60" y="44" text-anchor="middle" fill="#64748B" opacity="0.5" font-family="Inter" font-size="14" font-weight="700">vs</text>
+            </svg>
           </div>
           <div class="blog-card__body">
             <div class="blog-card__date">15 maart 2026</div>
@@ -75,9 +82,20 @@
             <a href="blog/displaypallet-vs-europallet.html" class="blog-card__link">Lees verder &rarr;</a>
           </div>
         </article>
-        <article class="blog-card fade-up">
+        <article class="blog-card fade-up delay-1">
           <div class="blog-card__visual">
-            <span class="blog-card__visual-text">D&uuml;</span>
+            <!-- Düsseldorf pallet SVG -->
+            <svg viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="25" y="20" width="70" height="45" rx="3" stroke="#1B4D7A" stroke-width="1.5" opacity="0.2"/>
+              <rect x="25" y="20" width="70" height="8" rx="2" fill="#1B4D7A" opacity="0.1"/>
+              <rect x="25" y="32" width="70" height="8" rx="2" fill="#1B4D7A" opacity="0.07"/>
+              <rect x="25" y="44" width="70" height="8" rx="2" fill="#1B4D7A" opacity="0.1"/>
+              <rect x="25" y="56" width="70" height="9" rx="2" fill="#1B4D7A" opacity="0.07"/>
+              <circle cx="40" cy="42" r="4" fill="#2563EB" opacity="0.15"/>
+              <circle cx="60" cy="42" r="4" fill="#2563EB" opacity="0.15"/>
+              <circle cx="80" cy="42" r="4" fill="#2563EB" opacity="0.15"/>
+              <text x="60" y="14" text-anchor="middle" fill="#1B4D7A" opacity="0.25" font-family="Inter" font-size="7" font-weight="600" letter-spacing="0.1em">DUSSELDORF</text>
+            </svg>
           </div>
           <div class="blog-card__body">
             <div class="blog-card__date">8 maart 2026</div>
@@ -95,7 +113,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <span class="footer__logo">Display Pallets</span>
+          <span class="footer__logo"><span class="nav__logo-accent"></span> Display Pallets</span>
           <p>Specialist in displaypallets, Düsseldorf pallets en halve europallets. Levering door heel Nederland vanuit Moerdijk.</p>
         </div>
         <div>
@@ -131,6 +149,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Terug naar boven">&#8593;</button>
 
   <script src="js/main.js" defer></script>
 </body>

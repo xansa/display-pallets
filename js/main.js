@@ -1,43 +1,90 @@
 /* ============================================
    Display Pallets — main.js
+   Premium B2B interactions
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ----- 1. Navigation ----- */
+  /* ----- 1. Navigation — scroll shadow + glassmorphism ----- */
+  (() => {
+    const nav = document.querySelector('.nav');
+    if (!nav) return;
+
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          nav.classList.toggle('is-scrolled', window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  /* ----- 2. Hamburger menu with slide animation ----- */
   (() => {
     const hamburger = document.querySelector('.nav__hamburger');
     const navLinks = document.querySelector('.nav__links');
     if (!hamburger || !navLinks) return;
 
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('is-open');
-      navLinks.classList.toggle('is-open');
-      document.body.style.overflow = navLinks.classList.contains('is-open') ? 'hidden' : '';
+    // Create overlay element for mobile
+    let overlay = document.querySelector('.nav-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'nav-overlay';
+      document.body.appendChild(overlay);
+    }
+
+    const toggle = () => {
+      const isOpen = navLinks.classList.contains('is-open');
+      hamburger.classList.toggle('is-open', !isOpen);
+      navLinks.classList.toggle('is-open', !isOpen);
+      overlay.classList.toggle('is-visible', !isOpen);
+      document.body.style.overflow = !isOpen ? 'hidden' : '';
+    };
+
+    const close = () => {
+      hamburger.classList.remove('is-open');
+      navLinks.classList.remove('is-open');
+      overlay.classList.remove('is-visible');
+      document.body.style.overflow = '';
+    };
+
+    hamburger.addEventListener('click', toggle);
+    overlay.addEventListener('click', close);
+
+    navLinks.querySelectorAll('.nav__link, .nav__cta').forEach(link => {
+      link.addEventListener('click', close);
     });
 
-    // Close on link click
-    navLinks.querySelectorAll('.nav__link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('is-open');
-        navLinks.classList.remove('is-open');
-        document.body.style.overflow = '';
-      });
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('is-open')) close();
     });
+  })();
 
-    // Active link detection
+  /* ----- 3. Active nav link detection ----- */
+  (() => {
+    const navLinks = document.querySelectorAll('.nav__link');
+    if (!navLinks.length) return;
+
     const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
     const pageName = currentPath.split('/').pop() || 'index.html';
-    navLinks.querySelectorAll('.nav__link').forEach(link => {
-      const href = link.getAttribute('href');
-      if (href === pageName || (pageName === '' && href === 'index.html') ||
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href').replace('../', '');
+      if (href === pageName ||
+          (pageName === '' && href === 'index.html') ||
           (currentPath === '/' && href === 'index.html')) {
         link.classList.add('is-active');
       }
     });
   })();
 
-  /* ----- 2. FAQ Accordion ----- */
+  /* ----- 4. FAQ Accordion ----- */
   (() => {
     const items = document.querySelectorAll('.faq-item');
     if (!items.length) return;
@@ -47,13 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!btn) return;
       btn.addEventListener('click', () => {
         const isOpen = item.classList.contains('is-open');
-        // Close all
         items.forEach(i => {
           i.classList.remove('is-open');
           const q = i.querySelector('.faq-question');
           if (q) q.setAttribute('aria-expanded', 'false');
         });
-        // Toggle current
         if (!isOpen) {
           item.classList.add('is-open');
           btn.setAttribute('aria-expanded', 'true');
@@ -62,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  /* ----- 3. Scroll Animations ----- */
+  /* ----- 5. Scroll Animations with staggered delays ----- */
   (() => {
     const els = document.querySelectorAll('.fade-up');
     if (!els.length) return;
@@ -74,12 +119,46 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
     els.forEach(el => observer.observe(el));
   })();
 
-  /* ----- 4. Contact Form Validation ----- */
+  /* ----- 6. Smooth scroll for anchor links ----- */
+  (() => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  })();
+
+  /* ----- 7. Back to Top button ----- */
+  (() => {
+    const btn = document.querySelector('.back-to-top');
+    if (!btn) return;
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          btn.classList.toggle('is-visible', window.scrollY > 400);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  /* ----- 8. Contact Form Validation ----- */
   (() => {
     const form = document.querySelector('.contact-form');
     if (!form) return;
@@ -92,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const bericht = form.querySelector('[name="bericht"]');
       const status = form.querySelector('.form-status');
 
-      // Simple validation
       let valid = true;
       [naam, email, bericht].forEach(field => {
         if (field && !field.value.trim()) {
@@ -116,13 +194,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // If form has a real action, submit it
       if (form.action && form.action !== '#' && !form.action.endsWith('#')) {
         form.submit();
         return;
       }
 
-      // Placeholder success
       if (status) {
         status.className = 'form-status form-status--success';
         status.textContent = 'Bedankt voor uw bericht! We nemen zo snel mogelijk contact met u op.';
