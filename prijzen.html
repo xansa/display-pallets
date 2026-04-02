@@ -27,7 +27,8 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Displaypallet 60x80 cm",
-    "description": "Houten displaypallet met afmetingen 60x80 cm, geschikt voor retail en logistiek.",
+    "description": "Houten displaypallet met afmetingen 60x80 cm, geschikt voor retail en logistiek. Volle vracht circa 2.400 stuks.",
+    "image": "https://display-pallets.nl/og-image.svg",
     "brand": {
       "@type": "Brand",
       "name": "Display Pallets"
@@ -40,7 +41,26 @@
       "offerCount": "2",
       "availability": "https://schema.org/InStock",
       "priceValidUntil": "2026-12-31",
-      "url": "https://display-pallets.nl/prijzen"
+      "url": "https://display-pallets.nl/prijzen",
+      "areaServed": "NL",
+      "seller": {"@type": "Organization", "name": "Display Pallets", "url": "https://display-pallets.nl"},
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "NL"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "d"}
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "NL",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      }
     }
   }
   </script>
