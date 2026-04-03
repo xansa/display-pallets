@@ -194,16 +194,35 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      if (form.action && form.action !== '#' && !form.action.endsWith('#')) {
-        form.submit();
-        return;
-      }
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; btn.textContent = 'Versturen...'; }
 
-      if (status) {
-        status.className = 'form-status form-status--success';
-        status.textContent = 'Bedankt voor uw bericht! We nemen zo snel mogelijk contact met u op.';
-      }
-      form.reset();
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(r => {
+        if (r.ok) {
+          if (status) {
+            status.className = 'form-status form-status--success';
+            status.textContent = 'Bedankt voor uw bericht! We nemen zo snel mogelijk contact met u op.';
+          }
+          form.reset();
+        } else {
+          if (status) {
+            status.className = 'form-status form-status--error';
+            status.textContent = 'Er ging iets mis. Probeer het opnieuw of neem telefonisch contact op.';
+          }
+        }
+      }).catch(() => {
+        if (status) {
+          status.className = 'form-status form-status--error';
+          status.textContent = 'Er ging iets mis. Probeer het opnieuw of neem telefonisch contact op.';
+        }
+      }).finally(() => {
+        if (btn) { btn.disabled = false; btn.textContent = 'Bericht versturen'; }
+      });
     });
   })();
 
